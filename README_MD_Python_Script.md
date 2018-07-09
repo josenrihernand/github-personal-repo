@@ -88,7 +88,7 @@ http://pr.aws.hosted.espn.com/espn-pr/v1/teamcity?buildType=ConnectedDevices_Ima
 
 
 
-## Common Issues / Error messages
+## Common Issues / Error messages:
 
 ```
 In this section, the description of some messages that could appear during the execution of the script will be shown:
@@ -137,13 +137,13 @@ In this section, we will demonstrate the execution of the script by means of som
 All the tests that follow, were executed in a test organization: code test-github-hooks-01 (code.espn.com)
 
 
-###### Replace the IP address in a webhook URL, regular Hook type (--k webhook), with two webhook URLs in the repo repo01.
+#### Replace the IP address in a webhook URL, regular Hook type (--k webhook), with two webhook URLs in the repo repo01.
 
-1. With dryrun mode True (--d True)
+##### 1. With dryrun mode True (--d True)
 
 ```
 python update_webhooks.py --d True --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c 10.10.110.110 --u 20.20.120.120 --k webhook
-```
+
 
 Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo01 - Repo ID: 11235 - DRYRUN = True
 ------------------------------------------
@@ -155,6 +155,7 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo01 - Re
   Webhook: 00002 http://10.10.110.110/pr/espn-pr/v1/teamcity?buildType=CseInfrastructure_XxDocker_Centos7jdk864_01PullRequest
   -------
   New URL: http://20.20.120.120/pr/espn-pr/v1/teamcity?buildType=CseInfrastructure_XxDocker_Centos7jdk864_01PullRequest
+```
 
 
 2. Now with dryrun mode False (--d False)
