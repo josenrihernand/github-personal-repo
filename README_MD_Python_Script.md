@@ -137,12 +137,12 @@ In this section, the description of some messages that could appear during the e
 ## Examples (test cases)
 
 In this section, we will demonstrate the execution of the script by means of some examples.
-All the tests that follow, were executed in a test organization: code test-github-hooks-01 (code.espn.com)
+All the tests were executed in a test organization: code test-github-hooks-01 (code.espn.com)
 
 
 #### EXAMPLE 01: Replace the IP address in two webhook URLs, of the regular Hook type (--k webhook). In this example, the name of the repository is repo01. The test consist of replace the IP address 10.10.110.110 by 20.20.120.120.
 
-##### 1. With dry run mode True (--d True)
+##### 1. With dry run mode True (--d True).
 
 ```
 python update_webhooks.py --d True --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c 10.10.110.110 --u 20.20.120.120 --k webhook
@@ -161,7 +161,7 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo01 - Re
 ```
 
 
-##### 2. Now with dry run mode False (--d False). Note the message "The webhook was updated successfully".
+##### 2. Now with dry run mode False (--d False).
 
 ```
 python update_webhooks.py --d False --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c 10.10.110.110 --u 20.20.120.120 --k webhook
@@ -186,7 +186,7 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo01 - Re
 
 #### EXAMPLE 02: Replace the domain in one webhook URL, of the servicehook Hook type (--k servicehook). In this example, the name of the repository is repo02. The test consist of replace the hostname teamcityTEST.corp.espn3.com by teamcityNEW_DOMAIN.corp.espn3.com.
 
-##### 1. With dry run mode True (--d True)
+##### 1. With dry run mode True (--d True).
 
 ```
 python update_webhooks.py --d True --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c teamcityTEST.corp.espn3.com --u teamcityNEW_DOMAIN.corp.espn3.com --k servicehook
@@ -198,7 +198,7 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo02 - Re
   New URL: http://teamcityNEW_DOMAIN.corp.espn3.com/
 ```
 
-##### 2. Now with dry run mode False (--d False). Note the message "The webhook was updated successfully".
+##### 2. Now with dry run mode False (--d False).
 
 ```
 python update_webhooks.py --d False --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c teamcityTEST.corp.espn3.com --u teamcityNEW_DOMAIN.corp.espn3.com --k servicehook
@@ -213,26 +213,24 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo02 - Re
 
 
 
+#### EXAMPLE 03: Replace the domain in one webhook URL, of the servicehook Hook type (--k servicehook). In this example, the name of the repository is repo02. The test consist of replace the hostname jenksTEST.ci.cloudbees.com by jenksNEW_DOMAIN.ci.cloudbees.com.
 
+##### 1. With dry run mode True (--d True).
 
-With dryrun mode True (--d True)
-
-python update_webhooks.py --d True --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c 
-
-jenksTEST.ci.cloudbees.com --u jenksNEW_DOMAIN.ci.cloudbees.com --k servicehook
+```
+python update_webhooks.py --d True --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c jenksTEST.ci.cloudbees.com --u jenksNEW_DOMAIN.ci.cloudbees.com --k servicehook
 
 Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo02 - Repo ID: 11236 - DRYRUN = True
 ------------------------------------------
   Webhook: 00003 https://jenksTEST.ci.cloudbees.com/github-webhook/
   -------
   New URL: https://jenksNEW_DOMAIN.ci.cloudbees.com/github-webhook/
+```
 
+##### 2. Now with dry run mode False (--d False).
 
-With dryrun mode False (--d False)
-
-python update_webhooks.py --d False --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c 
-
-jenksTEST.ci.cloudbees.com --u jenksNEW_DOMAIN.ci.cloudbees.com --k servicehook
+```
+python update_webhooks.py --d False --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c jenksTEST.ci.cloudbees.com --u jenksNEW_DOMAIN.ci.cloudbees.com --k servicehook
 
 Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo02 - Repo ID: 11236 - DRYRUN = False
 ------------------------------------------
@@ -240,32 +238,31 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo02 - Re
   -------
   New URL: https://jenksNEW_DOMAIN.ci.cloudbees.com/github-webhook/
   *** The webhook was updated successfully ***
+```
 
 
 
 
 
+#### EXAMPLE 04: Replace the domain in one webhook URL, of the regular Hook type (--k webhook). In this example, the name of the repository is repo03. The test consist of replace the hostname localcmsTEST.cricinfo.com by localcmsNEW_DOMAIN.cricinfo.com.
 
+##### 1. With dry run mode True (--d True).
 
-With dryrun mode True (--d True)
-
-python update_webhooks.py --d True --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c 
-
-localcmsTEST.cricinfo.com --u localcmsNEW_DOMAIN.cricinfo.com --k webhook
+```
+python update_webhooks.py --d True --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c localcmsTEST.cricinfo.com --u localcmsNEW_DOMAIN.cricinfo.com --k webhook
 
 Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo03 - Repo ID: 11237 - DRYRUN = True
 ------------------------------------------
   Webhook: 00001 http://localcmsTEST.cricinfo.com:9000/cgi-bin/cricinfo-git-build-v1.pl
   -------
   New URL: http://localcmsNEW_DOMAIN.cricinfo.com:9000/cgi-bin/cricinfo-git-build-v1.pl
+```
 
 
+##### 2. Now with dry run mode False (--d False).
 
-With dryrun mode False (--d False)
-
-python update_webhooks.py --d False --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c 
-
-localcmsTEST.cricinfo.com --u localcmsNEW_DOMAIN.cricinfo.com --k webhook
+```
+python update_webhooks.py --d False --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c localcmsTEST.cricinfo.com --u localcmsNEW_DOMAIN.cricinfo.com --k webhook
 
 Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo03 - Repo ID: 11237 - DRYRUN = False
 ------------------------------------------
@@ -273,10 +270,4 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo03 - Re
   -------
   New URL: http://localcmsNEW_DOMAIN.cricinfo.com:9000/cgi-bin/cricinfo-git-build-v1.pl
   *** The webhook was updated successfully ***
-
-
-  
-  
-
-
-
+```
