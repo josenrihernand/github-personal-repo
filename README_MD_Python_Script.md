@@ -140,7 +140,7 @@ In this section, we will demonstrate the execution of the script by means of som
 All the tests were executed in a test organization: code test-github-hooks-01 (code.espn.com)
 
 
-#### EXAMPLE 01: Replace the IP address in two webhook URLs, of the regular Hook type (--k webhook). In this example, the name of the repository is repo01. The test consist of replace the IP address 10.10.110.110 by 20.20.120.120.
+#### EXAMPLE 01: Replace the IP address in two webhook URLs, of the regular Hook type (--k webhook). In this example, the name of the repository is repo01. The test consist of replace the IP address _10.10.110.110_ by _20.20.120.120_.
 
 ##### 1. With dry run mode True (--d True).
 
