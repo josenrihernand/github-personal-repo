@@ -131,13 +131,13 @@ In this section, the description of some messages that could appear during the e
 
 
 
-## Examples
+## Examples (test cases)
 
 In this section, we will demonstrate the execution of the script by means of some examples.
 All the tests that follow, were executed in a test organization: code test-github-hooks-01 (code.espn.com)
 
 
-#### EXAMPLE 01: Replace the IP address in a webhook URL, regular Hook type (--k webhook), with two webhook URLs in the repo repo01.
+#### EXAMPLE 01: Replace the IP address in two webhook URLs, of the regular Hook type (--k webhook). In this example, the name of the repository is repo01.
 
 ##### 1. With dryrun mode True (--d True)
 
@@ -158,7 +158,7 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo01 - Re
 ```
 
 
-##### 2. Now with dryrun mode False (--d False)
+##### 2. Now with dryrun mode False (--d False). Note the message "The webhook was updated successfully".
 
 ```
 python update_webhooks.py --d True --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c 10.10.110.110 --u 20.20.120.120 --k webhook
