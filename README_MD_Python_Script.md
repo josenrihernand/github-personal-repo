@@ -118,11 +118,11 @@ Description:	The hostname or IP address specified with the argument --c doesn't 
 Message:	Webhook URLs Found, but none of type: [HOOK_TYPE] [HOOK_TYPE_DESCRIPTION]
 Description:	The hook type specified in --k arg (webhook for normal Hooks or servicehook for Integration & Services) doesn't match the hook type of the current webhook URL.
 		At this moment the script recognizes the following hook types, as valid ones: 
-			- For normal hooks (--k webhook): 
-				url. Example: https://hooks.slack.com/services... hooks.slack.com is a good example of a normal webhook.
+		- For normal hooks (--k webhook): 
+			url. Example: https://hooks.slack.com/services... hooks.slack.com is a good example of a normal webhook.
 							
-			- For Integration & Services (--k servicehook): 
-				This hook type will recognize all of these: base_url (teamcity), url_base (fisheye.corp.dig.com), or jenkins_hook_url (Jenkins). URL of Teamcity and Jenkins are both examples of servicehooks or Integrations & Services.
+		- For Integration & Services (--k servicehook): 
+			This hook type will recognize all of these: base_url (teamcity), url_base (fisheye.corp.dig.com), or jenkins_hook_url (Jenkins). URL of Teamcity and Jenkins are both examples of servicehooks or Integrations & Services.
 					
 Message:	Something failed with this repository: [REPO NAME] / Please check: [ERROR_DESCRIPTION]
 Description:	This is an uncommon error message. If a strange situation occurs during the processing of a specific repository, this message will be displayed and, also, the description of the error so that it is possible to take a look.
