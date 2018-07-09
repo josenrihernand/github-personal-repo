@@ -93,38 +93,38 @@ http://pr.aws.hosted.espn.com/espn-pr/v1/teamcity?buildType=ConnectedDevices_Ima
 ```
 In this section, the description of some messages that could appear during the execution of the script will be shown:
 
-	Message:		The organization [ORG_NAME] doesn't have any repo created. Please specify a valid org.
+	Message:	The organization [ORG_NAME] doesn't have any repo created. Please specify a valid org.
 	Description: 	The org specified with the argument --o doesn't have any repo created. A common cause of this message might be a typo in the name of the org.
 	
-	Message:		*** This repo doesn't have webhook URL ***
+	Message:	*** This repo doesn't have webhook URL ***
 	Description:	The current repo (for the org specified) doesn't have any webhook URL. 
-					(It is possible that other repositories for the current organization have created a webhook URL).
+			(It is possible that other repositories for the current organization have created a webhook URL).
 
-	Message:		*** Warning: The protocol schema passed in --u argument is different for this webhook: [PROTOCOL_NAME], No action was taken
+	Message:	*** Warning: The protocol schema passed in --u argument is different for this webhook: [PROTOCOL_NAME], No action was taken
 	Description:	Obvious. The script validates that the protocol schema specified with --u argument matches the current webhook URL.
 					Example: The protocol schema of the webhook URL is "http", and the one that was passed with argument --u is "https" (or other than "http").
 	
-	Message:		*** The hostname doesn't match the one that passed as an argument [HOSTNAME] != [CURRENT_HOSTNAME] ***
+	Message:	*** The hostname doesn't match the one that passed as an argument [HOSTNAME] != [CURRENT_HOSTNAME] ***
 	Description:	The hostname or IP address specified with the argument --c doesn't match the current webhook URL.
-					The value of --c argument is the search key through which the script will locate the webhook URL that will be updated. If the value specified in this 
-					argument is not found in the webhook URL, the script will display the current webhook URL along with this message, for that specific webhook URL.
+			The value of --c argument is the search key through which the script will locate the webhook URL that will be updated. If the value specified in this 
+			argument is not found in the webhook URL, the script will display the current webhook URL along with this message, for that specific webhook URL.
 	
-	Message:		*** Webhook URLs Found, but none of type: [HOOK_TYPE] [HOOK_TYPE_DESCRIPTION] ***
+	Message:	*** Webhook URLs Found, but none of type: [HOOK_TYPE] [HOOK_TYPE_DESCRIPTION] ***
 	Description:	The hook type specified in --k arg (webhook for normal Hooks or servicehook for Integration & Services) doesn't match the hook type of the current webhook URL.
-					At this moment the script recognizes the following hook types, as valid ones: 
-						- For normal hooks (--k webhook): 
-							url. Example: https://hooks.slack.com/services... hooks.slack.com is a good example of a normal webhook.
+				At this moment the script recognizes the following hook types, as valid ones: 
+					- For normal hooks (--k webhook): 
+						url. Example: https://hooks.slack.com/services... hooks.slack.com is a good example of a normal webhook.
 							
-						- For Integration & Services (--k servicehook): 
-							This hook type will recognize all of these: base_url (teamcity), url_base (fisheye.corp.dig.com), or jenkins_hook_url (Jenkins). URL of Teamcity and Jenkins are both examples of servicehooks or Integrations & Services.
+					- For Integration & Services (--k servicehook): 
+						This hook type will recognize all of these: base_url (teamcity), url_base (fisheye.corp.dig.com), or jenkins_hook_url (Jenkins). URL of Teamcity and Jenkins are both examples of servicehooks or Integrations & Services.
 					
-	Message:		Something failed with this repository: [REPO NAME] / Please check: [ERROR_DESCRIPTION]
+	Message:	Something failed with this repository: [REPO NAME] / Please check: [ERROR_DESCRIPTION]
 	Description:	This is an uncommon error message. If a strange situation occurs during the processing of a specific repository, this message will be displayed and, also, the description of the error so that it is possible to take a look.
 	
-	Message:		The organization [ORG_NAME] doesn't have repos with webhooks URL configured
+	Message:	The organization [ORG_NAME] doesn't have repos with webhooks URL configured
 	Description:	If none of the repositories (for the current org) have webhook URL of the hook type specified with the argument --k, this message will be displayed.
 	
-	Message:		*** Please check the update of the webhook (URL). There was an error during the requests.patch API command execution ***
+	Message:	*** Please check the update of the webhook (URL). There was an error during the requests.patch API command execution ***
 	Description: 	The response of the webhook URL updating process was not 200 (response.status_code).
-					It is necessary to investigate and figure out what should have happened during the replacement of this specific webhook URL.
+			It is necessary to investigate and figure out what should have happened during the replacement of this specific webhook URL.
 ```
