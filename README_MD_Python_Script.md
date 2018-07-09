@@ -140,7 +140,7 @@ In this section, we will demonstrate the execution of the script by means of som
 All the tests were executed in a test organization: code test-github-hooks-01 (code.espn.com)
 
 
-#### EXAMPLE 01: Replace the IP address in two webhook URLs, of the regular Hook type (--k webhook). In this example, the name of the repository is repo01. The test consist of replace the IP address _10.10.110.110_ by _20.20.120.120_.
+#### `EXAMPLE 01`: Replace the IP address in two webhook URLs, of the regular Hook type (--k webhook). In this example, the name of the repository is repo01. The test consist of replace the IP address _10.10.110.110_ by _20.20.120.120_.
 
 ##### 1. With dry run mode True (--d True).
 
@@ -184,7 +184,7 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo01 - Re
 
 
 
-#### EXAMPLE 02: Replace the domain in one webhook URL, of the servicehook Hook type (--k servicehook). In this example, the name of the repository is repo02. The test consist of replace the hostname teamcityTEST.corp.espn3.com by teamcityNEW_DOMAIN.corp.espn3.com.
+#### EXAMPLE 02: Replace the domain in one webhook URL, of the servicehook Hook type (--k servicehook). In this example, the name of the repository is repo02. The test consist of replace the hostname _teamcityTEST.corp.espn3.com_ by _teamcityNEW_DOMAIN.corp.espn3.com_.
 
 ##### 1. With dry run mode True (--d True).
 
@@ -213,7 +213,7 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo02 - Re
 
 
 
-#### EXAMPLE 03: Replace the domain in one webhook URL, of the servicehook Hook type (--k servicehook). In this example, the name of the repository is repo02. The test consist of replace the hostname jenksTEST.ci.cloudbees.com by jenksNEW_DOMAIN.ci.cloudbees.com.
+#### EXAMPLE 03: Replace the domain in one webhook URL, of the servicehook Hook type (--k servicehook). In this example, the name of the repository is repo02. The test consist of replace the hostname _jenksTEST.ci.cloudbees.com_ by _jenksNEW_DOMAIN.ci.cloudbees.com_.
 
 ##### 1. With dry run mode True (--d True).
 
@@ -244,7 +244,7 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo02 - Re
 
 
 
-#### EXAMPLE 04: Replace the domain in one webhook URL, of the regular Hook type (--k webhook). In this example, the name of the repository is repo03. The test consist of replace the hostname localcmsTEST.cricinfo.com by localcmsNEW_DOMAIN.cricinfo.com.
+#### EXAMPLE 04: Replace the domain in one webhook URL, of the regular Hook type (--k webhook). In this example, the name of the repository is repo03. The test consist of replace the hostname _localcmsTEST.cricinfo.com_ by _localcmsNEW_DOMAIN.cricinfo.com_.
 
 ##### 1. With dry run mode True (--d True).
 
