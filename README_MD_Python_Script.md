@@ -60,7 +60,7 @@ In that way we will have an text file which contains the output for the real exe
 
 
 
-- Info about the --u and --c arguments
+- Info about the arguments --u and --c
 
 The --u argument allow us to specify the hostname/IP address (or hostname/IP + path) that eventually will replace the current webhook URL.
 With the value specified in the --c argument, the script searches the current IP address (or hostname) that contains the webhook URL to be replaced.
@@ -140,9 +140,9 @@ In this section, we will demonstrate the execution of the script by means of som
 All the tests that follow, were executed in a test organization: code test-github-hooks-01 (code.espn.com)
 
 
-#### EXAMPLE 01: Replace the IP address in two webhook URLs, of the regular Hook type (--k webhook). In this example, the name of the repository is repo01.
+#### EXAMPLE 01: Replace the IP address in two webhook URLs, of the regular Hook type (--k webhook). In this example, the name of the repository is repo01. The test consist of replace the IP address 10.10.110.110 by 20.20.120.120.
 
-##### 1. With dryrun mode True (--d True)
+##### 1. With dry run mode True (--d True)
 
 ```
 python update_webhooks.py --d True --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c 10.10.110.110 --u 20.20.120.120 --k webhook
@@ -161,10 +161,10 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo01 - Re
 ```
 
 
-##### 2. Now with dryrun mode False (--d False). Note the message "The webhook was updated successfully".
+##### 2. Now with dry run mode False (--d False). Note the message "The webhook was updated successfully".
 
 ```
-python update_webhooks.py --d True --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c 10.10.110.110 --u 20.20.120.120 --k webhook
+python update_webhooks.py --d False --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c 10.10.110.110 --u 20.20.120.120 --k webhook
 
 
 Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo01 - Repo ID: 11235 - DRYRUN = False
@@ -184,12 +184,12 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo01 - Re
 
 
 
+#### EXAMPLE 02: Replace the domain in one webhook URL, of the servicehook Hook type (--k servicehook). In this example, the name of the repository is repo02. The test consist of replace the hostname teamcityTEST.corp.espn3.com by teamcityNEW_DOMAIN.corp.espn3.com.
 
-With dryrun mode True (--d True)
+##### 1. With dry run mode True (--d True)
 
-python update_webhooks.py --d True --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c 
-
-teamcityTEST.corp.espn3.com --u teamcityNEW_DOMAIN.corp.espn3.com --k servicehook
+```
+python update_webhooks.py --d True --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c teamcityTEST.corp.espn3.com --u teamcityNEW_DOMAIN.corp.espn3.com --k servicehook
 
 Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo02 - Repo ID: 11236 - DRYRUN = True
 ------------------------------------------
@@ -198,7 +198,9 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo02 - Re
   New URL: http://teamcityNEW_DOMAIN.corp.espn3.com/
 
 
-Now with dryrun mode False (--d False)
+##### 2. Now with dry run mode False (--d False). Note the message "The webhook was updated successfully".
+
+python update_webhooks.py --d False --o codetest-github-hooks-01 --t "48d4c3ef6bb98f85feaaad045c62f983241ece57" --c teamcityTEST.corp.espn3.com --u teamcityNEW_DOMAIN.corp.espn3.com --k servicehook
 
 Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo02 - Repo ID: 11236 - DRYRUN = False
 ------------------------------------------
@@ -206,6 +208,7 @@ Webhooks for repository (with webhook URL): codetest-github-hooks-01/repo02 - Re
   -------
   New URL: http://teamcityNEW_DOMAIN.corp.espn3.com/
   *** The webhook was updated successfully ***
+```
 
 
 
