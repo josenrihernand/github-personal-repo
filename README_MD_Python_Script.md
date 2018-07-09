@@ -1,8 +1,8 @@
 ## Overview:
 
-This script is supposed to replace the hostname and, eventually, other components of the current webhook URL of the [orgs]/[repositories] located in the Enterprise Github Account code.espn.com
+This script provides capability to replace the hostname and, eventually, other components of the current webhook URL of the [orgs]/[repositories] located in the Enterprise Github Account code.espn.com
 
-The script takes user arguments from the command line. 
+The script allows the user to specify configuration information when it is executed.
 
 Next the detailed usage information:
 
@@ -27,7 +27,9 @@ Arguments:
 
 - Python 2.7
 
-The script uses the following python modules, so, all of them must be installed before execute the script:
+## Prerequisites 
+
+The script uses the following python modules. All of them must be installed before execute the script:
 - json
 - requests
 - boto3
@@ -37,8 +39,7 @@ The script uses the following python modules, so, all of them must be installed 
 - argparse
 - urlparse
 
-For debugging purposes, it is also recommended to have the following modules installed
-(but no required for normal execution):
+For debugging purposes, it is also recommended to have the following modules installed (but no required for normal execution):
 - logging
 - httplib
 
@@ -56,13 +57,13 @@ The central idea is that dry run produces an output of the potential changes, so
 
 Once we are sure about what it will be exactly changed (using dry run mode), we can proceed to perform a real run.
 In this step it's suggested to save the execution. It could be simply by redirect the standard output to a text file (e.g: python update_webhooks.py arguments > MY_OUTPUT.out).
-In that way we will have an text file which contains the output for the real execution.
+In that way we will have a text file which contains the output for the real execution.
 
 
 
 - Info about the arguments --u and --c
 
-The --u argument allow us to specify the hostname/IP address (or hostname/IP + path) that eventually will replace the current webhook URL.
+The --u argument allows the user to specify the hostname/IP address (or hostname/IP + path) that eventually will replace the current webhook URL.
 With the value specified in the --c argument, the script searches the current IP address (or hostname) that contains the webhook URL to be replaced.
 
 For example, suppose we have a webhook URL like this:
@@ -81,7 +82,7 @@ The output (new webhook URL) would be:
 
 http://20.20.120.120:8080/pr/espn-pr/v1/teamcity?buildType=ConnectedDevices_Imaginary_01PullRequest
 
-Continuing with the same example, if we wanted to specify the hostname+path in --u argument, we could run the script as below:
+Continuing with the same example, if we wanted to specify the hostname+path in --u argument, we would run the script as below:
 
 ```
 python update_webhooks.py --d False --o codetest-github-hooks-01 --t "xxxxx" --c 10.10.110.110 --u http://pr.aws.hosted.espn.com/espn-pr/v1/teamcity --k webhook
@@ -104,7 +105,7 @@ Description: 	The org specified with the argument --o doesn't have any repo crea
 	
 Message:	This repo doesn't have webhook URL
 Description:	The current repo (for the org specified) doesn't have any webhook URL. 
-		(It is possible that other repositories for the current organization have created a webhook URL).
+		(It is possible that other repositories for the current organization have created webhook URLs).
 
 Message:	Warning: The protocol schema passed in --u argument is different for this webhook: [PROTOCOL_NAME], No action was taken
 Description:	Obvious. The script validates that the protocol schema specified with --u argument matches the current webhook URL.
@@ -113,19 +114,19 @@ Description:	Obvious. The script validates that the protocol schema specified wi
 Message:	The hostname doesn't match the one that passed as an argument [HOSTNAME] != [CURRENT_HOSTNAME]
 Description:	The hostname or IP address specified with the argument --c doesn't match the current webhook URL.
 		The value of --c argument is the search key through which the script will locate the webhook URL that will be updated. If the value specified in this 
-		argument is not found in the webhook URL, the script will display the current webhook URL along with this message, for that specific webhook URL.
+		argument is not found in the webhook URL, the script will display the current webhook URL along with this message.
 	
 Message:	Webhook URLs Found, but none of type: [HOOK_TYPE] [HOOK_TYPE_DESCRIPTION]
 Description:	The hook type specified in --k arg (webhook for normal Hooks or servicehook for Integration & Services) doesn't match the hook type of the current webhook URL.
 		At this moment the script recognizes the following hook types, as valid ones: 
 		- For normal hooks (--k webhook): 
-			url. Example: https://hooks.slack.com/services... hooks.slack.com is a good example of a normal webhook.
+			url. Example: https://hooks.slack.com/services../ hooks.slack.com is a good example of a normal webhook.
 							
 		- For Integration & Services (--k servicehook): 
 			This hook type will recognize all of these: base_url (teamcity), url_base (fisheye.corp.dig.com), or jenkins_hook_url (Jenkins). URL of Teamcity and Jenkins are both examples of servicehooks or Integrations & Services.
 					
 Message:	Something failed with this repository: [REPO NAME] / Please check: [ERROR_DESCRIPTION]
-Description:	This is an uncommon error message. If a strange situation occurs during the processing of a specific repository, this message will be displayed and, also, the description of the error so that it is possible to take a look.
+Description:	This is an uncommon error message. If a weird situation occurs during the processing of a specific repository, this message will be displayed and, also, the description of the error so that it is possible to take a look.
 	
 Message:	The organization [ORG_NAME] doesn't have repos with webhooks URL configured
 Description:	If none of the repositories (for the current org) have webhook URL of the hook type specified with the argument --k, this message will be displayed.
@@ -140,7 +141,7 @@ Description: 	The response of the webhook URL updating process was not 200 (resp
 
 ## Examples (test cases)
 
-In this section, we will demonstrate the execution of the script by means of some examples.
+In this section, it will be demonstrated the execution of the script by means of some examples.
 All the tests were executed in a test organization: code test-github-hooks-01 (code.espn.com)
 
 
