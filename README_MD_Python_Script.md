@@ -96,20 +96,20 @@ In this section, the description of some messages that could appear during the e
 	Message:	**The organization [ORG_NAME] doesn't have any repo created. Please specify a valid org.**
 	Description: 	The org specified with the argument --o doesn't have any repo created. A common cause of this message might be a typo in the name of the org.
 	
-	Message:	*****This repo doesn't have webhook URL*****
+	Message:	**\***This repo doesn't have webhook URL**\***
 	Description:	The current repo (for the org specified) doesn't have any webhook URL. 
 			(It is possible that other repositories for the current organization have created a webhook URL).
 
-	Message:	** *** Warning: The protocol schema passed in --u argument is different for this webhook: [PROTOCOL_NAME], No action was taken **
+	Message:	**\*** Warning: The protocol schema passed in --u argument is different for this webhook: [PROTOCOL_NAME], No action was taken **
 	Description:	Obvious. The script validates that the protocol schema specified with --u argument matches the current webhook URL.
 			Example: The protocol schema of the webhook URL is "http", and the one that was passed with argument --u is "https" (or other than "http").
 	
-	Message:	** *** The hostname doesn't match the one that passed as an argument [HOSTNAME] != [CURRENT_HOSTNAME] *** **
+	Message:	**\*** The hostname doesn't match the one that passed as an argument [HOSTNAME] != [CURRENT_HOSTNAME] ***\**
 	Description:	The hostname or IP address specified with the argument --c doesn't match the current webhook URL.
 			The value of --c argument is the search key through which the script will locate the webhook URL that will be updated. If the value specified in this 
 			argument is not found in the webhook URL, the script will display the current webhook URL along with this message, for that specific webhook URL.
 	
-	Message:	** *** Webhook URLs Found, but none of type: [HOOK_TYPE] [HOOK_TYPE_DESCRIPTION] *** **
+	Message:	**\*** Webhook URLs Found, but none of type: [HOOK_TYPE] [HOOK_TYPE_DESCRIPTION] ***\**
 	Description:	The hook type specified in --k arg (webhook for normal Hooks or servicehook for Integration & Services) doesn't match the hook type of the current webhook URL.
 			At this moment the script recognizes the following hook types, as valid ones: 
 				- For normal hooks (--k webhook): 
