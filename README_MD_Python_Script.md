@@ -1,7 +1,10 @@
 ## Overview:
 
 This script is supposed to replace the hostname and, eventually, other components of the current webhook URL of the [orgs]/[repositories] located in the Enterprise Github Account code.espn.com
-The script takes user arguments from the command line. Next the detailed usage information:
+
+The script takes user arguments from the command line. 
+
+Next the detailed usage information:
 
 ```
 ------------------------------------------------------------------------------
