@@ -95,7 +95,7 @@ http://pr.aws.hosted.espn.com/espn-pr/v1/teamcity?buildType=ConnectedDevices_Ima
 
 In this section, the description of some messages that could appear during the execution of the script will be shown:
 
-```**
+```
 Message:	\`The organization [ORG_NAME] doesn't have any repo created. Please specify a valid org.\`
 Description: 	The org specified with the argument --o doesn't have any repo created. A common cause of this message might be a typo in the name of the org.
 	
@@ -130,7 +130,7 @@ Description:	If none of the repositories (for the current org) have webhook URL 
 Message:	Please check the update of the webhook (URL). There was an error during the requests.patch API command execution
 Description: 	The response of the webhook URL updating process was not 200 (response.status_code).
 		It is necessary to investigate and figure out what should have happened during the replacement of this specific webhook URL.
-**```
+```
 
 
 
