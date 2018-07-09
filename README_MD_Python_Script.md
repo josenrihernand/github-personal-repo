@@ -66,7 +66,7 @@ The --u argument allow us to specify the hostname/IP address (or hostname/IP + p
 With the value specified in the --c argument, the script searches the current IP address (or hostname) that contains the webhook URL to be replaced.
 
 For example, suppose we have a webhook URL like this:
-http://10.10.110.110:8080/pr/espn-pr/v1/teamcity?buildType=ConnectedDevices_Imaginary_01PullRequest
+`http://10.10.110.110:8080/pr/espn-pr/v1/teamcity?buildType=ConnectedDevices_Imaginary_01PullRequest`
 
 If we want to replace the IP address 10.10.110.110 by 20.20.120.120, we would specify --c 10.10.110.110 and --u 20.20.120.120, as below:
 
