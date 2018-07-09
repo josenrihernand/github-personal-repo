@@ -96,7 +96,7 @@ In this section, the description of some messages that could appear during the e
 	Message:	``` **The organization [ORG_NAME] doesn't have any repo created. Please specify a valid org.** ```
 	Description: 	The org specified with the argument --o doesn't have any repo created. A common cause of this message might be a typo in the name of the org.
 	
-	Message:	**\***This repo doesn't have webhook URL**\***
+	Message:	__***This repo doesn't have webhook URL__
 	Description:	The current repo (for the org specified) doesn't have any webhook URL. 
 			(It is possible that other repositories for the current organization have created a webhook URL).
 
